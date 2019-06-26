@@ -1,9 +1,11 @@
-<div class="posts">
+<div class="posts_index">
   <% @posts.each do |post| %>
     <section class="post">
 			  <div class="user">
 			    <div class="avatar">
-			      <img class="avatar" src="https://avatars.dicebear.com/v2/bottts/benji.svg">
+			      <% if post.user.avatar.attached? %>
+			        <%= image_tag post.user.avatar %>
+			      <% end %>
 			    </div>
 			    <div class="username">
 			      <%= post.user.username %>

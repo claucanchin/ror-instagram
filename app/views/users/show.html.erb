@@ -1,9 +1,11 @@
 <div class="user-profile">
   <div class="profile row">
     <div class="col-md-4 avatar">
-      <div class="wrapper">
-        <img src="https://avatars.dicebear.com/v2/bottts/benji.svg">
-      </div>
+			<div class="wrapper">
+			  <% if current_user.avatar.attached? %>
+			    <%= image_tag current_user.avatar %>
+			  <%end %>
+			</div>
     </div>
 
     <div class="col-md-8 basic-info">
@@ -50,15 +52,3 @@
     </div>
   <% end %>
 </div>
-
-<!-- <div class="user-images">
-  <div class="wrapper">
-    <img src="https://i.imgur.com/tuCSVx4.jpg">
-  </div>
-  <div class="wrapper">
-    <img src="https://i.imgur.com/wi8Wb1F.jpg">
-  </div>
-  <div class="wrapper">
-    <img src="https://i.imgur.com/Ll2VqBS.jpg">
-  </div>
-</div> -->
